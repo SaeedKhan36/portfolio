@@ -1,18 +1,29 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowDown, Github, Linkedin, Twitter, Instagram } from "lucide-react";
+import { ArrowDown, Github, Linkedin, Twitter, Instagram, User } from "lucide-react";
 
 export default function Hero() {
     return (
         <section className="relative w-full h-screen flex items-center justify-center overflow-hidden bg-[#030014]">
-            {/* Background Gradient & Grid */}
             <div className="absolute inset-0 w-full h-full bg-[#030014]">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--neon-blue)_0%,_transparent_10%)] opacity-20 blur-[100px] animate-pulse"></div>
                 <div className="absolute top-0 left-0 w-full h-full bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))] opacity-20"></div>
             </div>
 
             <div className="relative z-10 text-center px-4">
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.5 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.8 }}
+                    className="relative w-32 h-32 mx-auto mb-8 rounded-full p-1 bg-gradient-to-r from-neon-blue to-neon-purple"
+                >
+                    <div className="w-full h-full rounded-full bg-[#030014] flex items-center justify-center overflow-hidden">
+                        {/* Replace with your image: <img src="/profile.jpg" alt="Saeed Khan" className="w-full h-full object-cover" /> */}
+                        <User className="w-16 h-16 text-gray-400" />
+                    </div>
+                </motion.div>
+
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -29,9 +40,9 @@ export default function Hero() {
                     transition={{ duration: 0.8, delay: 0.4 }}
                     className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight"
                 >
-                    Building the <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple text-glow">Future</span>
+                    Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple text-glow">Saeed Khan</span>
                     <br />
-                    One Line at a Time
+                    <span className="text-3xl md:text-5xl mt-4 block">Building the Future</span>
                 </motion.h1>
 
                 <motion.p
@@ -63,23 +74,22 @@ export default function Hero() {
                     </a>
                 </motion.div>
 
-                {/* Social Links */}
+
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.8, delay: 1 }}
                     className="mt-12 flex gap-6 justify-center"
                 >
-                    <a href="https://github.com/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors"><Github className="w-6 h-6" /></a>
-                    <a href="https://linkedin.com/in/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-neon-blue transition-colors"><Linkedin className="w-6 h-6" /></a>
-                    <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-neon-blue transition-colors"><Twitter className="w-6 h-6" /></a>
-                    <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-neon-purple transition-colors"><Instagram className="w-6 h-6" /></a>
+                    <a href="https://github.com/SaeedKhan36" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors"><Github className="w-6 h-6" /></a>
+                    <a href="https://linkedin.com/in/saeed-khan-b19440319" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-neon-blue transition-colors"><Linkedin className="w-6 h-6" /></a>
+                    <a href="https://twitter.com/SaeedKhan120842" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-neon-blue transition-colors"><Twitter className="w-6 h-6" /></a>
+                    <a href="https://instagram.com/_saeedkhan___" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-neon-purple transition-colors"><Instagram className="w-6 h-6" /></a>
                 </motion.div>
             </div>
 
             <motion.div
                 initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
                 transition={{ delay: 1.5, duration: 1 }}
                 className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce"
             >

@@ -28,19 +28,18 @@ export default function Navbar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-[#030014]/80 backdrop-blur-md border-b border-white/10" : "bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-[#030014]/80 backdrop-blur-md border-b border-white/10" : "bg-transparent"
+        }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0 flex items-center gap-2 cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
             <Terminal className="w-8 h-8 text-neon-blue" />
             <span className="font-bold text-xl tracking-wider text-white">
-              DEV<span className="text-neon-blue">.</span>PORTFOLIO
+              Saeed<span className="text-neon-blue">.</span>Khan
             </span>
           </div>
-          
+
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
               {navLinks.map((link) => (
@@ -55,7 +54,7 @@ export default function Navbar() {
               ))}
             </div>
           </div>
-          
+
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -67,7 +66,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile menu */}
+
       {isOpen && (
         <motion.div
           initial={{ opacity: 0, height: 0 }}
